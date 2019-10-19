@@ -527,7 +527,7 @@ class StatusActivity : Activity() {
                     buttonInherit.visibility = View.GONE
                     buttonClose.visibility = View.VISIBLE
                 } else {
-                    buttonInherit.visibility = View.VISIBLE
+                    buttonInherit.visibility = View.GONE
                     buttonClose.visibility = View.GONE
                 }
 

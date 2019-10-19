@@ -69,13 +69,7 @@ class StatusFetcher {
             lastChange.timeInMillis = spaceStatus.getLong("lastchange") * 1000
 
             if (spaceStatus.getBoolean("open")) {
-                val rawOpenedBy = spaceStatus.getString("trigger_person")
-                val openedBy = rawOpenedBy.substringBeforeLast("[mx]")
-
-                val since = GregorianCalendar.getInstance()
-                since.timeInMillis = spaceStatus.getLong("ext_since") * 1000
-
-                return SpaceStatusData.createOpenStatus(openedBy, lastChange, since)
+                return SpaceStatusData.createOpenStatus("", lastChange, lastChange)
             } else {
                 return SpaceStatusData.createClosedStatus(lastChange)
             }
@@ -87,7 +81,7 @@ class StatusFetcher {
     }
 
     companion object {
-        private val STATUS_URL = Uri.parse("https://status.stratum0.org/status.json")
+        private val STATUS_URL = Uri.parse("http://spaceapi.n39.eu/json")
 
         private val DEBUG_STATUS_LIST: Array<SpaceStatusData> = arrayOf(
                 SpaceStatusData.createErrorStatus(),

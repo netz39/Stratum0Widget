@@ -13,8 +13,8 @@ import java.net.SocketException
 
 class SshInteractor {
     fun open(sshPrivateKey: String, sshPassword: String): Int? {
-        val user = "auf"
-        val server = if (BuildConfig.DEBUG) "192.168.178.21" else "powerberry"
+        val user = "sesam"
+        val server = "platon"
 
         val jsch = JSch()
         JSch.setConfig("StrictHostKeyChecking", "no")

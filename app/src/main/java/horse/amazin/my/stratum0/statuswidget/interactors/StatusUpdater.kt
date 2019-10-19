@@ -11,10 +11,10 @@ import java.util.concurrent.ExecutionException
 class StatusUpdater {
     fun update(name: String?) {
         val queryString = if (name != null) {
-            UPDATE_URI.buildUpon().appendQueryParameter("open", "true").appendQueryParameter("by", name)
+            UPDATE_OPEN
         } else {
-            UPDATE_URI.buildUpon().appendQueryParameter("open", "false")
-        }.build().toString()
+            UPDATE_CLOSE
+        }.toString()
 
         if (BuildConfig.DEBUG) {
             Thread.sleep(500)
@@ -40,6 +40,8 @@ class StatusUpdater {
     }
 
     companion object {
-        private val UPDATE_URI = Uri.parse("https://status.stratum0.org/update")
+        private val UPDATE_OPEN = Uri.parse("https://wittgenstein/open")
+        private val UPDATE_CLOSE = Uri.parse("https://wittgenstein/close")
+
     }
 }

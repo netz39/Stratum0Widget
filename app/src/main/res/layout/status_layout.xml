@@ -107,7 +107,7 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:contentDescription="@string/status_icon_description"
-                        android:src="@drawable/ic_stratum0_cutout"
+                        android:src="@drawable/ic_netz39_logo_final"
                         />
 
                 </FrameLayout>
